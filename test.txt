@@ -1,0 +1,14 @@
+23
+42
++
+dup
+.s
+over
+3
+*
+.s
+drop
+15
+swap
+-
+.s
