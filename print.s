@@ -1,17 +1,17 @@
-.section .rodata
+.globl _print
+_print:
+    push %rbp
+    mov %rsp, %rbp
+
+    # Setup args
+    lea fmt(%rip), %rdi # Load string address
+    mov %rsi, %rsi
+    xor %rax, %rax
+
+    call _printf
+
+    pop %rbp
+    ret
+
 fmt:
-   .asciz "%d\n"
-eol:
-   .asciz "\n"
-
-.section .text
-.globl print
-print:
- push %rax
- #mov  $42, %rsi
- mov $fmt, %rdi
- xor %rax, %rax
- call printf
- pop %rax
- ret
-
+    .asciz "%d\n"

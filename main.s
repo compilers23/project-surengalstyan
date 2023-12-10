@@ -1,15 +1,8 @@
-
-
-
-
-.section .text
-.globl _start
-_start:
+.globl _main
+_main:
   mov $42, %rsi
-	call print
+  call _print
 exit:
-
-    mov $60, %rax
-		xor %rdi, %rdi
-		syscall
-
+  mov $60, %rax
+  xor %rdi, %rdi
+  syscall
